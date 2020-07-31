@@ -6,25 +6,25 @@ classdef PduParams< matlab.mixin.SetGet
     % includes parameters for numerical integration -CMJ
     properties
         jc = 0;        % active uptake rate of 1,2-PD(cm/s)
-        kcA = 1e-5;      % permeability of purinosome scaffold to PRPP (cm/s)
-        kcP = 1e-5;      % permeability of scaffold to R5P (cm/s)
-        Rb = 5e-5;       % radius of bacterial cell (cm)
-        Rc = 1e-5;       % radius of bacterial cell %made larger to match real volume ratio
+        kcA = 1e-5;      % permeability of MCP to propanal (cm/s) %purinosome scaffold to PRPP  
+        kcP = 1e-5;      % permeability of MCP to 1,2-PD (cm/s)   %scaffold to R5P 
+        Rb = 5e-5;       % radius of cell (cm)                    %bacterial 
+        Rc = 1e-5;       % radius of bacterial cell               %made larger to match real volume ratio
         D = 1e-5;        % diffusion constant (cm^2/s)
 
-        kmA = 0.01;       % cm/s permeability of cell membrane to PRPP
-        kmP = 0.01;       % cm/s permeability of cell membrane to R5P
+        kmA = 0.01;       % cm/s permeability of outer membrane to proponal 
+        kmP = 0.01;       % cm/s permeability of outer membrane to 1,2-PD
         
         alpha = 0;          % reaction rate of conversion of CO2 to HCO3- at the cell membrane (cm/s)
         Pout = 55*1e3;      % uM concentration of 1,2-PD outside
         Aout = 0;           % uM concentration of propanal outside
 
-        kcatCDE = 300;          % rxns/s maximum reaction rate of a PRPPS active site 
-        NCDE = 1500;              % number of PRPP active enxymes per cell 
-        KCDE= 0.5*1e3;        	% half max reaction rate of PRPPS, uM
-        kcatPQ = 55;            % rxns/s maximum rate of PRPP consumption by PPAT
-        NPQ = 2500;              % number of PPAT active sites %updated based on MFS data
-        KPQ = 15*1e3;           % uM half max reaction rate for PPAT
+        kcatCDE = 300;          % rxns/s maximum reaction rate at a single PduCDE active site 
+        NCDE = 1500;            % number of PduCDE active sites 
+        KCDE= 0.5*1e3;        	% half max reaction rate of PduCDE, uM
+        kcatPQ = 55;            % rxns/s maximum rate of aldehyde consumption by PduP/Q
+        NPQ = 2500;             % number of PduP/PduQ active sites %updated based on MFS data
+        KPQ = 15*1e3;           % uM half max reaction rate for PduP/Q
         
         x;
         dx;

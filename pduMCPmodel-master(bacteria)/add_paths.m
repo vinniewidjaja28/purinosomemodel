@@ -4,11 +4,11 @@
 
 %Vinnie macbook pro
 % main path folder for code
-addpath('/Users/vinniewidjaja28/Desktop/pduMCPmodel-master(bacteria)')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/pduMCPmodel-master(bacteria)')
 % numerical code path
-addpath('/Users/vinniewidjaja28/Desktop/pduMCPmodel-master(bacteria)/numericalcode')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/pduMCPmodel-master(bacteria)/numericalcode')
 % analytical code path
-addpath('/Users/vinniewidjaja28/Desktop/pduMCPmodel-master(bacteria)/analyticcode')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/pduMCPmodel-master(bacteria)/analyticcode')
 % figure code path
-addpath('/Users/vinniewidjaja28/Desktop/pduMCPmodel-master(bacteria)/figurescripts')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/pduMCPmodel-master(bacteria)/figurescripts')
 

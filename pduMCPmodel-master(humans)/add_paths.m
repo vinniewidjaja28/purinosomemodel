@@ -4,11 +4,11 @@
 
 %Vinnie macbook pro
 % main path folder for code
-addpath('/Users/vinniewidjaja28/Desktop/pduMCPmodel-master(humans)')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/pduMCPmodel-master(humans)')
 % numerical code path
-addpath('/Users/vinniewidjaja28/Desktop/pduMCPmodel-master(humans)/numericalcode')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/pduMCPmodel-master(humans)/numericalcode')
 % analytical code path
-addpath('/Users/vinniewidjaja28/Desktop/pduMCPmodel-master(humans)/analyticcode')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/pduMCPmodel-master(humans)/analyticcode')
 % figure code path
-addpath('/Users/vinniewidjaja28/Desktop/pduMCPmodel-master(humans)/figurescripts')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/pduMCPmodel-master(humans)/figurescripts')
 

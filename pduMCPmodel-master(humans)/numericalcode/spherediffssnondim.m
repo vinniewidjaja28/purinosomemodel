@@ -32,6 +32,7 @@ for i = 2:xnum-1
     RPQ = a(i)/(1 + a(i)); %non-dimensional PduP/PduQ reaction
     RCDE = p(i)/(1 + p(i)); % non-dimensional PduCDE reaction
     dp(i) = beta*(xhp*(p(i+1)-p(i))-xhm*(p(i)-p(i-1)))- 1/param.kappa*RCDE; %change in 1,2-PD
+    % we need to add q/ over something 
     da(i) = beta*(xhp*(a(i+1)-a(i))-xhm*(a(i)-a(i-1)))+ RCDE - param.gamma*RPQ; %change in propanal
 end
 

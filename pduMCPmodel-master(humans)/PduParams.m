@@ -6,25 +6,25 @@ classdef PduParams< matlab.mixin.SetGet
     % includes parameters for numerical integration -VW
     properties
         jc = 8.66*1e9;  % volumetric flux of R5P (cm/s)
-        kcA = 1e3;      % permeability of purinosome scaffold to PRPP (cm/s)
-        kcP = 1e3;      % permeability of purinosome scaffold to R5P (cm/s)
+        kcA = 1e3;      % permeability of MCP to propanal (cm/s) %purinosome scaffold to PRPP (cm/s)
+        kcP = 1e3;      % permeability of MCP to 1,2-PD (cm/s)   %purinosome scaffold to R5P (cm/s)
         Rb = 1.05*1e-3;       % radius of cell (cm)
-        Rc = 1.25*1e-4;       % radius of purinosome (cm) %made larger to match real volume ratio
+        Rc = 1.25*1e-4;       % radius of MCP (purinosome) (cm) %made larger to match real volume ratio
         D = 1e-5;        % diffusion constant (of metabolites) (cm^2/s)
 
-        kmA = 1e7;       % cm/s permeability of cell membrane to PRPP
-        kmP = 1e7;       % cm/s permeability of cell membrane to R5P
+        kmA = 1e7;       % cm/s permeability of cell membrane to propanol %PRPP
+        kmP = 1e7;       % cm/s permeability of cell membrane to 1,2-PD   %R5P
         
         alpha = 0;          % reaction rate of conversion of CO2 to HCO3- at the cell membrane (cm/s)
         Pout = 5;      % uM concentration of 1,2-PD outside
         Aout = 0;           % uM concentration of propanal outside
 
-        kcatCDE = 4.24;          % rxns/s maximum reaction rate at a PRPPS active site
-        NCDE = 3.38*1e5;              % number of PRPPS enzymes per cell
-        KCDE= 490;        	% half max reaction rate of PRPPS, uM
+        kcatCDE = 4.24;          % rxns/s maximum reaction rate at a single PduCDE active site %PRPPS 
+        NCDE = 3.38*1e5;              % number of PduCDE active sites enzymes per cell
+        KCDE= 490;        	% half max reaction rate of PduCDE (PRPPS), uM
         kcatPQ = 3.98*1e-3;            % rxns/s maximum rate of aldehyde consumption by PduP/PduQ
-        NPQ = 8.90*1e5;              % number of PPAT enzyme active sites per cell 
-        KPQ = 480;           % uM half max reaction rate for PPAT
+        NPQ = 8.90*1e5;              % number of PduP/PduQ (PPAT)enzyme active sites per cell 
+        KPQ = 480;           % uM half max reaction rate for PduP/Q (PPAT) 
         
         x;
         dx;
