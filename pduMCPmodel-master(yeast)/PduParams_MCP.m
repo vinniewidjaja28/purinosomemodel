@@ -46,96 +46,119 @@ classdef PduParams_MCP < PduParams &  matlab.mixin.SetGet
         function value = get.VCDE(obj)
             value = obj.VCDEMCP;
         end
+        
         function value = get.VPQ(obj)
             value = obj.VPQMCP;
         end
         
         function value = get.xi(obj)
             value = obj.D * obj.KPQ / (obj.VCDE * obj.Rc^2);
+             % equation (D*KPQ)/(VCDE*Rc^2) = xi    
         end
+        
         function value = get.gamma(obj)
             value = 2*obj.VPQ / obj.VCDE;
+            % equation 2VPQ/VCDE = gamma
         end
+        
         function value = get.kappa(obj)
             value = obj.KCDE / obj.KPQ;
+            % equation KCDE/KPQ = kappa
         end
         
         function value = get.Xa(obj)
             value = (obj.D/(obj.kcA*obj.Rc^2) + 1/obj.Rc - 1/obj.Rb);
+            % equation (D*KPQ)/(VCDE*Rc^2) = xi  
         end
+        
         function value = get.Xp(obj)
             value = (obj.D/(obj.kcP*obj.Rc^2) + 1/obj.Rc - 1/obj.Rb);
+            % equation (D/KCP*Rc^2) + 1/Rc-1/Rb = Xp
         end
 
         function value = get.beta_a(obj)
             value = -1/(obj.Rc*(obj.D/(obj.kmA*obj.Rb^2)+obj.Xa));
-
-        end
-        function value = get.epsilon_a(obj)
-            value = obj.Aout/(obj.KPQ*obj.Rc*(obj.D/(obj.kmA*obj.Rb^2)+obj.Xa));
-
+            % equation -1/(Rc(D/KMA*Rb^2)+Xa) = beta_a
         end
         
+        function value = get.epsilon_a(obj)
+            value = obj.Aout/(obj.KPQ*obj.Rc*(obj.D/(obj.kmA*obj.Rb^2)+obj.Xa));
+            % equation Aout/(KPQ*Rc(D/KMA*Rb^2)+Xa) = epsilon
+        end
+      
         function value = get.beta_p(obj)
             value = -obj.kmP/(obj.Rc*(obj.D/obj.Rb^2+obj.kmP*obj.Xp));
-
+            % equation -kmP/(Rc(D/(Rb^2+kmP*Xp))) = beta_P
         end
         
         function value = get.epsilon_p(obj)
             value = obj.Pout*(obj.jc+obj.kmP)/(obj.KCDE*obj.Rc*(obj.D/obj.Rb^2+obj.kmP*obj.Xp));
-
+            % equation Pout(jc*kmP)/(KCDE*Rc(D/(Rb^2+kmP*Xp))) = epsilon_p
         end
         
         function value = get.U(obj)
             value =(2*obj.VPQ*obj.Rc^3*(obj.D/(obj.kmA*obj.Rb^2)+obj.Xa))/(3*obj.D*obj.KPQ);
+            % equation 2VPQ*Rc^3*(D/(kmA*Rb^2)+Xa))/(3D/KPQ) = U 
         end
         
         function value = get.V(obj)
             value =obj.Aout/obj.KPQ;
+            % equation Aout/KPQ = V
         end
         
         function value = get.W(obj)
             value =1/2*obj.VCDE/obj.VPQ;
+            % equation 1/2(VCDE/VPQ) = W
         end
         
         function value = get.Y(obj)
             value = (obj.VCDE*obj.Rc^3*(obj.D/(obj.kmP*obj.Rb^2)+obj.Xp))/(3*obj.D*obj.KCDE);
+            % equation VCDE*Rc^3*((D/kmP*Rb^2)+Xp)/(3D*KCDE)) = Y
         end
         
         function value = get.Z(obj)
             value =(obj.Pout*(1+obj.jc/obj.kmP))/obj.KCDE;
+            % equation Pout*((1+jc)/kmP)/KCDE) = Z
         end
         
         function value = get.E(obj)
             value =1+obj.Y-obj.Z;
+            % equation 1+Y-Z = E
         end
         
         function value = get.F(obj)
             value =1+obj.U-obj.V;
+            % equation 1+U-V = F
         end
         
-        function value = get.G(obj)  % added
+        function value = get.G(obj)  % added G term 
             value = 3*obj.q/(4*pi()*obj.Rc^3*(obj.D/(obj.kmP*obj.Rb^2)+obj.Xp));
+            % equation 3q/(4pi*Rc^3*(D/kmP*Rb^2)+Xp)) = G
         end
         
         function value = get.Aprime(obj)
             value = (obj.VCDE*obj.Rc)/(3*obj.KCDE*obj.kcP);
+            % equation (VCDE*Rc)/(3*KCDE*kcP) = Aprime
         end    
            
         function value = get.Bprime(obj)
             value = obj.Pout/obj.KCDE;
+            % equation Pout/KCDE = Bprime 
         end 
            
         function value = get.Cprime(obj)
             value = (2*obj.VPQ*obj.Rc)/(3*obj.KPQ*obj.kcA);
+            % equation (2*VPQ*Rc)/(3*KPQ*kcA) = Cprime
         end    
         
         function value = get.Dprime(obj)
             value = obj.Aout/obj.KPQ;
+            % equation Aout/KPQ = Dprime
         end 
         
         function value = get.Eprime(obj)
             value = obj.VCDE/(2*obj.VPQ);
+            % equation VCDE/(2*VPQ) = Eprime 
         end 
         
         

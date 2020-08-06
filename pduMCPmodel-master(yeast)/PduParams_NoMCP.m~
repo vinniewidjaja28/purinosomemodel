@@ -114,47 +114,39 @@ classdef PduParams_NoMCP < PduParams &  matlab.mixin.SetGet
         
         function value = get.Z(obj)
             value =(obj.Pout*(1+obj.jc/obj.kmP))/obj.KCDE;
-            % equation (Pout(1+jc/kmP))/KCDE = Z
+            % equation 
         end
         
         function value = get.E(obj)
             value =1+obj.Y-obj.Z;
-            % equation 1+Y-Z = E
         end
         
         function value = get.F(obj)
             value =1+obj.U-obj.V;
-            % equation 1+U-V = F
         end
         
         function value = get.G(obj)  % added G term
             value = 3*obj.q/(4*pi()*obj.Rc^3*(obj.D/(obj.kmP*obj.Rb^2)+obj.Xp));
-            % equation 3*q/(4pi*Rc^3*(D/kmP*Rb^2)+xP)) = G
         end
         
         function value = get.Aprime(obj)
             value = (obj.VCDE*obj.Rc)/(3*obj.KCDE*obj.kcP);
-            % equation (VCDE*Rc)/(3*KCDE*kcP) = Aprime
         end    
            
         function value = get.Bprime(obj)
             value = obj.Pout/obj.KCDE;
-            % equation Pout/KCDE = Bprime 
         end 
            
         function value = get.Cprime(obj)
             value = (2*obj.VPQ*obj.Rc)/(3*obj.KPQ*obj.kcA);
-            % equation (2*VPQ*Rc)/(3*KPQ*kcA) = Cprime
         end    
         
         function value = get.Dprime(obj)
             value = obj.Aout/obj.KPQ;
-            % equation Aout/KPQ = Dprime
         end 
         
         function value = get.Eprime(obj)
             value = obj.VCDE/(2*obj.VPQ);
-            % equation VCDE/(2*VPQ) = Eprime
         end 
         
         

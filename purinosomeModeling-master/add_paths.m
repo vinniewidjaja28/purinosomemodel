@@ -2,13 +2,13 @@
 % adding the paths allows you to run different functions in all the
 % folders, without being in those folders.
 
-%vinniewidjaja28 macbook pro
+%Vinniewidjaja28 macbook pro
 % main path folder for code
-addpath('/Users/vinniewidjaja28/desktop/matlab/purinosomeModeling-master')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/purinosomeModeling-master')
 % numerical code path
-addpath('/Users/vinniewidjaja28/desktop/matlab/purinosomeModeling-master/numericalcode')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/purinosomeModeling-master/numericalcode')
 % analytical code path
-addpath('/Users/vinniewidjaja28/desktop/matlab/purinosomeModeling-master/analyticcode')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/purinosomeModeling-master/analyticcode')
 % figure code path
-addpath('/Users/vinniewidjaja28/desktop/matlab/purinosomeModeling-master/figurescripts')
+addpath('/Users/vinniewidjaja28/Desktop/matlab/purinosomeModeling-master/figurescripts')
 
